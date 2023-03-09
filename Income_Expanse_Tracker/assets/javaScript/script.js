@@ -26,21 +26,17 @@ function loadTransactionDetails(transaction){
   trans.appendChild(item);
 }
 
-function removeTrans(id){
-    if(confirm("Are u sure want to delete transaction?"))
-    {
-        transaction = transaction.filter((transaction) => 
-        {
-            transaction.id != id
-        }
-        );
-        
-        refreshPage();
+function removeTrans(id) {
+    if (confirm("Are u sure want to delete transaction?")) {
+      transaction = transaction.filter((transaction) => {
+        return transaction.id !== id;
+      });
+      refreshPage();
+    } else {
+      return;
     }
-    else{
-        return;
-    }
-}
+  }
+  
 function updateAmount(){
     const amounts=transaction.map((transaction)=> transaction.amount);
     const total=amounts.reduce((acc,item)=>(acc+=item),0).toFixed(2);
