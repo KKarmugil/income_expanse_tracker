@@ -1,0 +1,172 @@
+/*
+light yellow-#feca57 
+ */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    height: 100vh;
+    width:100%;
+    display:grid;
+    place-items: center;
+    background-color: rgb(170, 199, 190);
+}
+.container{
+    background-color:whitesmoke;
+    width:800px;
+    height: 600px;
+    box-shadow: rgba(0,0,0,0.16) 1.95 1.95px 2.6px;
+    display:flex;
+}
+/* left side of ledger   */
+.ledger{
+     flex:1;
+     background-color: #2f3542;
+     color:white;
+     padding:20px;
+}
+.ledger h2{
+    text-transform: uppercase;
+    color:#feca57;
+}
+.ledger h2,
+.ledger h4,
+.ledger h1{
+    margin-bottom: 5px;
+    font-weight: 600;
+    padding: 5px;
+}
+.inc-exp-container{
+    display: flex;
+    padding:5px;
+    gap:10px;
+}
+.inc-exp-container div{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px;
+    font-size:18px;
+    flex:1;
+}
+.inc-exp-container div p{
+    font-size: 22px;
+}
+.inc-exp-container .inc{
+    border:3px solid #1dd1a1;
+    color:#1dd1a1;
+}
+.inc-exp-container .exp{
+    border: 3px solid #ee5253;
+    color:#ee5253;
+
+}
+#form{
+    margin-top: 20px;
+    padding: 5px;
+}
+.form-control{
+    margin-top:10px;
+}
+label{
+    font-weight:500;
+    margin:10px 0;
+    font-size:18px;
+    display: inline-block;
+}
+input[type="text"],
+input[type="number"]{
+    width:100%;
+    border:1px solid #dedede;
+    font-size:16px;
+    padding:10px;
+    border-radius: 4px;
+    display: block;
+    outline:none;
+}
+
+.btn{
+    background-color: #2e86de;
+    color:white;
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding:10px;
+    border:0;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 5px;
+}
+/* right side of ledger */
+.transaction{
+    flex: 1;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.transaction h3{
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom:1px solid #d1d6e2;
+    margin-bottom: 5px;
+}
+.trans{
+    list-style-type: none;
+    margin-bottom: 40px;
+}
+.trans li{
+    background-color: #fff;
+    color:#333;
+    box-shadow: rgba(0,0,0,0.02) 
+    0px 1px 3px 0px,rgba(27,31,35,0.15)
+     0px 0px 0px 1px;
+     padding:10px;
+     margin:10px 0;
+     position:relative;
+     display: flex;
+     justify-content: space-between;
+
+
+}
+.trans li.inc{
+    border-left: 5px solid #1dd1a1;
+}
+.trans li.exp{
+    border-left:5px solid #ee5253;
+}
+/* button for delete */
+.btn-del{
+    position: absolute;
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    font-weight: 500;
+    color:#fff;
+    background-color: tomato;
+    border:none;
+    font-size: 18px;
+    line-height: 20px;
+    cursor: pointer;
+    top:-10px;
+    right: -10px;
+    opacity: 0;
+    transition:opacity 0.3s ease ;
+}
+.trans li:hover .btn-del{
+    opacity: 1;
+   
+}
+::-webkit-scrollbar{
+    width:5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #2e86de;
+    border-radius: 8px;
+}
